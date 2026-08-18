@@ -1,4 +1,4 @@
-# Midhun & Nandhini — Wedding Invitation
+# Midhun & Nandini — Wedding Invitation
 
 A single-file, mobile-first digital wedding invitation.
 
