@@ -5,9 +5,14 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="theme-color" content="#2A1620">
 <title>Midhun &amp; Nandini · Wedding Invitation</title>
-<meta name="description" content="Midhun & Nandini invite you and your family. Reception 3 September 2026, 12:30 PM. Wedding Muhurtham 4 September 2026, 2:52 AM. V Conventions, Srikakulam.">
+<meta name="description" content="Midhun &amp; Nandini invite you and your family. Reception 3rd September 2026, 12:30 PM — lunch &amp; blessings. Wedding Muhurtham 4th September 2026, 2:52 AM. V Conventions, Srikakulam.">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Midhun &amp; Nandini · Wedding Invitation">
 <meta property="og:title" content="Midhun &amp; Nandini · Wedding Invitation">
-<meta property="og:description" content="Reception 3 Sept 2026 · Muhurtham 4 Sept 2026, 2:52 AM · V Conventions, Srikakulam">
+<meta property="og:description" content="Reception 3rd September 2026, 12:30 PM · Lunch &amp; Blessings · Muhurtham 4th September 2026, 2:52 AM · V Conventions, Srikakulam">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Midhun &amp; Nandini · Wedding Invitation">
+<meta name="twitter:description" content="Reception 3rd September 2026, 12:30 PM · Lunch &amp; Blessings · Muhurtham 4th September 2026, 2:52 AM · V Conventions, Srikakulam">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=Cormorant+Garamond:wght@500;600;700&family=Great+Vibes&family=Noto+Serif+Telugu:wght@500;600&display=swap" rel="stylesheet">
@@ -79,13 +84,22 @@
     margin:0;font-weight:400;
   }
   .rings{display:block;margin:1px auto 4px;width:72px;height:auto}
-  .invite{font-size:14.2px;font-weight:600;line-height:1.34;margin:0;color:var(--ink)}
-  .names{font-family:var(--display);font-weight:400;color:var(--maroon);margin:10px 0 0;line-height:1}
-  .names .n{display:block;font-size:34px;line-height:1.14}
-  .names .amp{display:block;font-size:16px;color:var(--gold);line-height:1.15}
+  .invite{font-size:20;font-weight:bold;line-height:1.34;margin:0;color:var(--ink)}
+  /* Names sit side by side on a single line; JS shrinks the row if it ever overflows. */
+  .names{
+    font-family:var(--display);font-weight:400;color:var(--maroon);
+    margin:9px 0 0;font-size:38px;line-height:1.32;
+  }
+  .names .row{
+    display:inline-flex;align-items:baseline;justify-content:center;
+    gap:.22em;white-space:nowrap;
+  }
+  .names .n{font-size:1em}
+  .names .amp{font-size:.5em;color:var(--gold)}
+  .names-te .row{display:inline-block;white-space:nowrap}
   .names-te{
-    font-family:var(--telugu);font-weight:600;font-size:12px;color:var(--maroon);opacity:.9;
-    margin:4px 0 0;line-height:1.35;
+    font-family:var(--telugu);font-weight:600;font-size:12.5px;color:var(--maroon);opacity:.9;
+    margin:2px 0 0;line-height:1.9;padding-bottom:2px;white-space:nowrap;overflow:visible;
   }
   .divider{display:block;margin:4px auto;width:210px;height:auto}
 
@@ -285,12 +299,8 @@
       would make our celebration truly memorable.
     </p>
 
-    <h1 class="names">
-      <span class="n">Midhun</span>
-      <span class="amp">&amp;</span>
-      <span class="n">Nandini</span>
-    </h1>
-    <p class="names-te">మిధున్ కుమార్ &amp; నందిని &nbsp;·&nbsp; శుభ వివాహం</p>
+    <h1 class="names" id="names"><span class="row"><span class="n">Midhun</span><span class="amp">&amp;</span><span class="n">Nandini</span></span></h1>
+    <p class="names-te" id="namesTe"><span class="row">మిదున్ కుమార్ &amp; నందిని &nbsp;·&nbsp; శుభ వివాహం</span></p>
 
     <svg class="divider" viewBox="0 0 300 20" fill="none" aria-hidden="true">
       <path d="M0 10 H118" stroke="#C9A54A" stroke-width="1"/>
@@ -399,8 +409,27 @@
   var card = document.getElementById('card');
   var DESIGN_W = 390;
 
+  /* Keep a single-line block on one line: shrink its type until it fits its column. */
+  function shrinkToFit(el, measure, max, min){
+    if (!el) return;
+    var size = max;
+    el.style.fontSize = size + 'px';
+    var avail = el.clientWidth;
+    while (size > min && (measure(el) - avail) > 0.5){
+      size -= 0.5;
+      el.style.fontSize = size + 'px';
+    }
+  }
+  function rowWidth(el){ var r = el.querySelector('.row'); return r ? r.getBoundingClientRect().width : 0; }
+
+  function fitLines(){
+    shrinkToFit(document.getElementById('names'), rowWidth, 38, 20);
+    shrinkToFit(document.getElementById('namesTe'), rowWidth, 12.5, 9);
+  }
+
   function fit(){
     card.style.transform = 'none';
+    fitLines();
     var h = card.offsetHeight;                    // natural height at design width
     var vw = window.innerWidth;
     var vh = window.visualViewport ? window.visualViewport.height : window.innerHeight;
