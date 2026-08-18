@@ -139,22 +139,39 @@
   /* ============ BUTTONS (in place of QR codes) ============ */
   .actions{
     margin:9px 0 0;padding:7px;
-    border:1px solid rgba(184,145,47,.5);border-radius:3px;
+    border:1px solid rgba(184,145,47,.5);border-radius:7px;
     background:linear-gradient(180deg,rgba(255,255,255,.55),rgba(245,233,214,.35));
     display:grid;grid-template-columns:1fr 1fr;gap:7px;
   }
   .btn{
     display:flex;align-items:center;justify-content:center;gap:6px;
-    min-height:44px;padding:8px 5px;border-radius:2px;
+    min-height:46px;padding:9px 6px;border-radius:5px;
     font-family:var(--caps);font-weight:700;font-size:11.5px;letter-spacing:.03em;
     text-transform:uppercase;text-decoration:none;text-align:center;line-height:1.25;
-    background:var(--maroon);color:#FDF6E7;border:1px solid var(--maroon-deep);
-    box-shadow:inset 0 0 0 1px rgba(235,215,155,.45), 0 3px 9px rgba(124,18,48,.2);
-    transition:background .2s ease, transform .15s ease;
+    background:linear-gradient(180deg,#8E1637 0%,var(--maroon) 45%,var(--maroon-deep) 100%);
+    color:#FDF6E7;border:1px solid var(--maroon-deep);
+    /* raised lip + drop shadow so it reads as a pressable button, not a label */
+    box-shadow:inset 0 1px 0 rgba(255,255,255,.28), inset 0 0 0 1px rgba(235,215,155,.35),
+               0 2px 0 rgba(92,11,34,.55), 0 4px 10px rgba(124,18,48,.28);
+    transition:transform .12s ease, box-shadow .12s ease, filter .2s ease;
   }
-  .btn:active{transform:scale(.97)}
-  .btn svg{width:14px;height:auto;flex:0 0 auto}
-  .btn-alt{background:transparent;color:var(--maroon);border-color:var(--gold);box-shadow:inset 0 0 0 1px rgba(184,145,47,.3)}
+  .btn:active{
+    transform:translateY(2px);
+    box-shadow:inset 0 1px 0 rgba(255,255,255,.2), inset 0 0 0 1px rgba(235,215,155,.35),
+               0 0 0 rgba(92,11,34,.55), 0 2px 5px rgba(124,18,48,.25);
+  }
+  .btn svg{width:15px;height:auto;flex:0 0 auto}
+  /* second action: same button shape, gold face so the pair still reads as two buttons */
+  .btn-alt{
+    background:linear-gradient(180deg,var(--gold-light) 0%,#C9A23C 50%,#9C7620 100%);
+    color:var(--maroon-deep);border-color:#8A6819;
+    box-shadow:inset 0 1px 0 rgba(255,255,255,.45), inset 0 0 0 1px rgba(255,246,224,.3),
+               0 2px 0 rgba(120,90,22,.55), 0 4px 10px rgba(150,115,30,.28);
+  }
+  .btn-alt:active{
+    box-shadow:inset 0 1px 0 rgba(255,255,255,.35), inset 0 0 0 1px rgba(255,246,224,.3),
+               0 0 0 rgba(120,90,22,.55), 0 2px 5px rgba(150,115,30,.25);
+  }
   a:focus-visible{outline:2px solid var(--maroon);outline-offset:2px}
 
   /* ============ CLOSING ============ */
@@ -379,14 +396,15 @@
     </div>
 
     <div class="actions">
-      <a class="btn" href="https://maps.app.goo.gl/6fUNvfMqtJRgSFfm7?g_st=ic" target="_blank" rel="noopener">
+      <a class="btn" href="https://www.google.com/maps/dir/?api=1&amp;destination=V%20Conventions%2C%20Near%20Simhadwaram%2C%20NH16%2C%20Purushotham%20Nagar%20Colony%2C%20Byrivanipeta%2C%20Kusharapuram%2C%20Andhra%20Pradesh%20532410&amp;travelmode=driving" target="_blank" rel="noopener">
         <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
-          <path d="M12 22s7.5-7.2 7.5-12.4A7.5 7.5 0 0 0 4.5 9.6C4.5 14.8 12 22 12 22Z" stroke="currentColor" stroke-width="1.9"/>
-          <circle cx="12" cy="9.6" r="2.6" stroke="currentColor" stroke-width="1.7"/>
+          <path d="M21.5 3.2 2.8 10.4a.6.6 0 0 0 .05 1.13l7.5 2.5 2.5 7.5a.6.6 0 0 0 1.13.05L21.5 3.2Z"
+                stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/>
+          <path d="M21.5 3.2 10.35 14.03" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
         </svg>
-        Google Maps
+        Get Directions
       </a>
-      <a class="btn btn-alt" href="https://calendar.google.com/calendar/event?action=TEMPLATE&amp;tmeid=M2d1a2tzcjM4dHBnMmFmbGVzdjIwa2t0aHQgZmFtaWx5MTMzOTY4NjQ1NTQyMTM0ODU2MDlAZw&amp;tmsrc=family13396864554213485609%40group.calendar.google.com" target="_blank" rel="noopener">
+      <a class="btn btn-alt" href="https://calendar.google.com/calendar/render?action=TEMPLATE&amp;text=Midhun+%26+Nandini+-+Wedding+Reception&amp;dates=20260903T070000Z%2F20260903T103000Z&amp;details=Reception+on+3rd+September+2026%2C+12%3A30+PM+onwards+-+lunch+%26+blessings.%0AWedding+Muhurtham%3A+4th+September+2026+at+2%3A52+AM.%0AWith+love%2C+Midhun+Kumar+Peddina.&amp;location=V+Conventions+%28Visyaraju+Convention%29%2C+Near+Simhadwaram%2C+NH-16%2C+Srikakulam%2C+Andhra+Pradesh+532410" target="_blank" rel="noopener">
         <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
           <rect x="2.5" y="4.5" width="19" height="17" rx="2" stroke="currentColor" stroke-width="1.7"/>
           <path d="M2.5 9.5h19M7.5 2.5v4M16.5 2.5v4M12 12.5v6M9 15.5h6" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/>
