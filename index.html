@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#2A1620">
+<title>Midhun &amp; Nandhini · Wedding Invitation</title>
+<meta name="description" content="Midhun & Nandhini invite you and your family. Reception 3 September 2026, 12:30 PM. Wedding Muhurtham 4 September 2026, 2:52 AM. V Conventions, Srikakulam.">
+<meta property="og:title" content="Midhun &amp; Nandhini · Wedding Invitation">
+<meta property="og:description" content="Reception 3 Sept 2026 · Muhurtham 4 Sept 2026, 2:52 AM · V Conventions, Srikakulam">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600&family=Cormorant+Garamond:wght@400;500;600&family=Great+Vibes&family=Noto+Serif+Telugu:wght@400&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --maroon:#7C1230;
+    --maroon-deep:#5C0B22;
+    --rose:#C0355A;
+    --gold:#B8912F;
+    --gold-light:#DCB65B;
+    --gold-pale:#EBD79B;
+    --ink:#4A2C2A;
+    --cream:#FBF6EC;
+    --cream-2:#F5E9D6;
+    --display:"Great Vibes",cursive;
+    --caps:"Cinzel",Georgia,serif;
+    --body:"Cormorant Garamond",Georgia,serif;
+    --telugu:"Noto Serif Telugu",serif;
+    --W:390px;              /* design width of the card */
+  }
+  *{box-sizing:border-box;-webkit-tap-highlight-color:rgba(124,18,48,.15)}
+  html,body{margin:0;height:100%}
+  body{
+    background:#2A1620;
+    background-image:radial-gradient(70% 45% at 50% 0%, #45222F 0%, #1E0F17 75%);
+    font-family:var(--body);color:var(--ink);
+    -webkit-font-smoothing:antialiased;-webkit-text-size-adjust:100%;
+    display:flex;align-items:center;justify-content:center;
+  }
+  body.fitted{overflow:hidden}          /* only lock scrolling once JS has scaled it */
+
+  /* ============ CARD ============ */
+  .card{
+    position:relative;
+    width:var(--W);
+    flex:0 0 auto;
+    transform-origin:center center;
+    overflow:hidden;
+    background:radial-gradient(130% 75% at 50% 5%, #FDFAF3 0%, var(--cream) 46%, var(--cream-2) 100%);
+    box-shadow:0 16px 44px rgba(0,0,0,.55), 0 0 0 1px rgba(184,145,47,.45);
+  }
+  .frame{position:absolute;inset:0;z-index:3;pointer-events:none}
+  .content{position:relative;z-index:2;padding:24px 26px 20px;text-align:center}
+
+  /* ============ DECOR ============ */
+  .corner{position:absolute;z-index:1;pointer-events:none;width:142px}
+  .c-tl{top:-12px;left:-16px}
+  .c-tr{top:-12px;right:-16px;transform:scaleX(-1)}
+  .c-bl{bottom:-14px;left:-18px;transform:scaleY(-1);width:118px}
+  .c-br{bottom:-14px;right:-18px;transform:scale(-1,-1);width:118px}
+
+  .garlands{position:absolute;top:0;left:0;right:0;height:150px;z-index:1;pointer-events:none}
+  .gl{position:absolute;top:0;width:7px}
+  .gl .str{
+    width:7px;height:100%;
+    background-image:radial-gradient(circle at 50% 50%, #E9A2B4 0 40%, rgba(0,0,0,0) 42%);
+    background-size:7px 10px;background-repeat:repeat-y;
+  }
+  .gl .bell{position:absolute;left:50%;bottom:-16px;transform:translateX(-50%);width:17px}
+
+  /* ============ TYPE ============ */
+  .ganesha{display:block;margin:0 auto;width:52px;height:auto}
+  .kicker{
+    font-family:var(--caps);font-size:10.5px;letter-spacing:.11em;line-height:1.65;
+    color:var(--maroon);margin:2px 0 0;text-transform:uppercase;
+  }
+  .script-line{
+    font-family:var(--display);font-size:33px;line-height:1.12;color:var(--maroon);
+    margin:1px 0 0;font-weight:400;
+  }
+  .rings{display:block;margin:4px auto 8px;width:88px;height:auto}
+  .invite{font-size:12.6px;line-height:1.52;margin:0;color:var(--ink)}
+  .names{font-family:var(--display);font-weight:400;color:var(--maroon);margin:8px 0 0;line-height:1}
+  .names .n{display:block;font-size:38px;line-height:1.1}
+  .names .amp{display:block;font-size:19px;color:var(--gold);line-height:1.35}
+  .names-te{
+    font-family:var(--telugu);font-size:10.5px;color:var(--maroon);opacity:.72;
+    margin:6px 0 0;line-height:1.5;
+  }
+  .divider{display:block;margin:10px auto;width:210px;height:auto}
+
+  /* ============ EVENTS: two columns ============ */
+  .events{display:grid;grid-template-columns:1fr 12px 1fr;align-items:start;gap:6px;margin:2px 0 0}
+  .vdiv{align-self:stretch}
+  .vdiv svg{width:12px;height:100%;display:block}
+  .medallion{display:block;margin:0 auto 6px;width:44px;height:auto}
+  .event h2{
+    font-family:var(--caps);font-weight:600;font-size:10px;letter-spacing:.05em;
+    color:var(--maroon);margin:0 0 7px;text-transform:uppercase;line-height:1.35;
+  }
+  .event .date{font-size:12.6px;line-height:1.35;margin:0;color:var(--ink)}
+  .event .date sup{font-size:.62em;vertical-align:super}
+  .event .day{display:block;font-size:10px;letter-spacing:.03em;color:#6B4A42}
+  .event .time{font-size:15px;line-height:1.25;margin:4px 0 0;color:var(--maroon);font-weight:600}
+  .event .note{font-size:10px;line-height:1.35;margin:1px 0 0;color:#6B4A42}
+
+  /* ============ VENUE ============ */
+  .venue{margin:8px 0 0}
+  .venue-label{
+    display:flex;align-items:center;justify-content:center;gap:5px;
+    font-family:var(--caps);font-weight:600;letter-spacing:.09em;font-size:10.5px;
+    color:var(--maroon);text-transform:uppercase;margin:0;
+  }
+  .venue-label svg{width:13px;height:auto}
+  .venue-name{
+    font-family:var(--caps);font-weight:400;font-size:19px;letter-spacing:.03em;
+    color:#123B2E;margin:5px 0 0;line-height:1.2;
+  }
+  .venue-alt{font-size:11.5px;color:#3F5A4C;margin:1px 0 0}
+  .venue-addr{font-size:12.4px;line-height:1.4;color:var(--ink);margin:4px 0 0}
+
+  /* ============ BUTTONS (in place of QR codes) ============ */
+  .actions{
+    margin:12px 0 0;padding:10px;
+    border:1px solid rgba(184,145,47,.5);border-radius:3px;
+    background:linear-gradient(180deg,rgba(255,255,255,.55),rgba(245,233,214,.35));
+    display:grid;grid-template-columns:1fr 1fr;gap:9px;
+  }
+  .btn{
+    display:flex;align-items:center;justify-content:center;gap:6px;
+    min-height:44px;padding:9px 6px;border-radius:2px;
+    font-family:var(--caps);font-weight:600;font-size:9.5px;letter-spacing:.05em;
+    text-transform:uppercase;text-decoration:none;text-align:center;line-height:1.25;
+    background:var(--maroon);color:#FDF6E7;border:1px solid var(--maroon-deep);
+    box-shadow:inset 0 0 0 1px rgba(235,215,155,.45), 0 3px 9px rgba(124,18,48,.2);
+    transition:background .2s ease, transform .15s ease;
+  }
+  .btn:active{transform:scale(.97)}
+  .btn svg{width:14px;height:auto;flex:0 0 auto}
+  .btn-alt{background:transparent;color:var(--maroon);border-color:var(--gold);box-shadow:inset 0 0 0 1px rgba(184,145,47,.3)}
+  a:focus-visible{outline:2px solid var(--maroon);outline-offset:2px}
+
+  /* ============ CLOSING ============ */
+  .closing{
+    margin:12px 0 0;font-family:var(--caps);font-size:9.5px;letter-spacing:.07em;
+    line-height:1.8;color:var(--maroon);text-transform:uppercase;
+  }
+  .heart{display:block;margin:7px auto 2px;width:15px;height:auto}
+  .warmly{font-family:var(--display);font-size:22px;color:var(--maroon);margin:0;line-height:1.15}
+  .signer{
+    font-family:var(--caps);font-weight:600;font-size:11px;letter-spacing:.1em;
+    color:var(--maroon-deep);margin:3px 0 0;text-transform:uppercase;
+  }
+
+  @media (prefers-reduced-motion:reduce){*{transition:none!important}}
+  @media print{
+    body{background:#fff;display:block;overflow:visible}
+    .card{transform:none!important;box-shadow:none;margin:0 auto}
+    .btn{background:#fff!important;color:var(--maroon)!important;border-color:var(--gold)!important;box-shadow:none!important}
+  }
+</style>
+</head>
+<body>
+
+<!-- decorative symbols -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <path id="petal" d="M0 0 C -25 -11 -29 -43 0 -60 C 29 -43 25 -11 0 0 Z"/>
+    <g id="bloom">
+      <g fill="currentColor" fill-opacity=".95">
+        <use href="#petal" transform="rotate(0)"/><use href="#petal" transform="rotate(45)"/>
+        <use href="#petal" transform="rotate(90)"/><use href="#petal" transform="rotate(135)"/>
+        <use href="#petal" transform="rotate(180)"/><use href="#petal" transform="rotate(225)"/>
+        <use href="#petal" transform="rotate(270)"/><use href="#petal" transform="rotate(315)"/>
+      </g>
+      <g fill="currentColor" fill-opacity=".75">
+        <use href="#petal" transform="rotate(22) scale(.68)"/><use href="#petal" transform="rotate(67) scale(.68)"/>
+        <use href="#petal" transform="rotate(112) scale(.68)"/><use href="#petal" transform="rotate(157) scale(.68)"/>
+        <use href="#petal" transform="rotate(202) scale(.68)"/><use href="#petal" transform="rotate(247) scale(.68)"/>
+        <use href="#petal" transform="rotate(292) scale(.68)"/><use href="#petal" transform="rotate(337) scale(.68)"/>
+      </g>
+      <g fill="currentColor" fill-opacity=".55">
+        <use href="#petal" transform="rotate(10) scale(.38)"/><use href="#petal" transform="rotate(70) scale(.38)"/>
+        <use href="#petal" transform="rotate(130) scale(.38)"/><use href="#petal" transform="rotate(190) scale(.38)"/>
+        <use href="#petal" transform="rotate(250) scale(.38)"/><use href="#petal" transform="rotate(310) scale(.38)"/>
+      </g>
+      <circle r="7" fill="currentColor" fill-opacity=".38"/>
+      <circle r="3.2" fill="#C79A3A" fill-opacity=".8"/>
+    </g>
+    <g id="bud">
+      <path d="M0 0 C -17 -8 -19 -30 0 -42 C 19 -30 17 -8 0 0 Z" fill="currentColor" fill-opacity=".95"/>
+      <path d="M0 -4 C -9 -10 -10 -26 0 -34 C 10 -26 9 -10 0 -4 Z" fill="currentColor" fill-opacity=".6"/>
+    </g>
+    <g id="leaf">
+      <path d="M0 0 C -20 -18 -18 -50 0 -70 C 18 -50 20 -18 0 0 Z" fill="currentColor"/>
+      <path d="M0 -2 L0 -64" stroke="#FBF6EC" stroke-opacity=".35" stroke-width="1.6" fill="none"/>
+    </g>
+    <g id="cluster">
+      <g>
+        <g style="color:#3F5C2E"><use href="#leaf" transform="translate(198,148) rotate(58)"/></g>
+        <g style="color:#5C7A42"><use href="#leaf" transform="translate(240,100) rotate(74) scale(.86)"/></g>
+        <g style="color:#4C6B37"><use href="#leaf" transform="translate(148,206) rotate(24) scale(.96)"/></g>
+        <g style="color:#5C7A42"><use href="#leaf" transform="translate(100,238) rotate(6) scale(.82)"/></g>
+        <g style="color:#3F5C2E"><use href="#leaf" transform="translate(58,192) rotate(-20) scale(.76)"/></g>
+        <g style="color:#5C7A42"><use href="#leaf" transform="translate(26,116) rotate(-42) scale(.68)"/></g>
+        <g style="color:#4C6B37"><use href="#leaf" transform="translate(124,60) rotate(112) scale(.74)"/></g>
+      </g>
+      <g style="color:#EFAFC0"><use href="#bloom" transform="translate(50,42) scale(.98)"/></g>
+      <g style="color:#8E1230"><use href="#bloom" transform="translate(152,24) scale(.76)"/></g>
+      <g style="color:#F7DCE2"><use href="#bloom" transform="translate(22,140) scale(.7)"/></g>
+      <g style="color:#8E1230"><use href="#bloom" transform="translate(120,118) scale(.6)"/></g>
+      <g style="color:#F2C3CF"><use href="#bloom" transform="translate(216,64) scale(.54)"/></g>
+      <g style="color:#FBF0E0"><use href="#bloom" transform="translate(62,208) scale(.52)"/></g>
+      <g style="color:#EFAFC0"><use href="#bloom" transform="translate(178,160) scale(.46)"/></g>
+      <g style="color:#F7DCE2"><use href="#bud" transform="translate(234,138) rotate(28) scale(.72)"/></g>
+      <g style="color:#8E1230"><use href="#bud" transform="translate(144,214) rotate(-14) scale(.64)"/></g>
+    </g>
+    <g id="bellShape">
+      <path d="M13 3 C14.6 3 15.6 4.2 15.6 5.6 C21.8 8.6 25 16 25 24 L1 24 C1 16 4.2 8.6 10.4 5.6 C10.4 4.2 11.4 3 13 3 Z" fill="url(#goldGrad)"/>
+      <ellipse cx="13" cy="24.6" rx="12.6" ry="3.4" fill="url(#goldGrad)"/>
+      <circle cx="13" cy="30.5" r="3.2" fill="#A87F26"/>
+    </g>
+    <linearGradient id="goldGrad" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#E9CE7E"/><stop offset=".45" stop-color="#C39A33"/><stop offset="1" stop-color="#9C7620"/>
+    </linearGradient>
+  </defs>
+</svg>
+
+
+<main class="card" id="card">
+
+  <svg class="corner c-tl" viewBox="0 0 320 320" aria-hidden="true"><use href="#cluster"/></svg>
+  <svg class="corner c-tr" viewBox="0 0 320 320" aria-hidden="true"><use href="#cluster"/></svg>
+  <svg class="corner c-bl" viewBox="0 0 320 320" aria-hidden="true"><use href="#cluster"/></svg>
+  <svg class="corner c-br" viewBox="0 0 320 320" aria-hidden="true"><use href="#cluster"/></svg>
+
+  <div class="garlands" aria-hidden="true">
+    <div class="gl" style="left:12%;height:74px"><div class="str"></div><svg class="bell" viewBox="0 0 26 34"><use href="#bellShape"/></svg></div>
+    <div class="gl" style="left:19%;height:112px"><div class="str"></div><svg class="bell" viewBox="0 0 26 34"><use href="#bellShape"/></svg></div>
+    <div class="gl" style="right:12%;height:74px"><div class="str"></div><svg class="bell" viewBox="0 0 26 34"><use href="#bellShape"/></svg></div>
+    <div class="gl" style="right:19%;height:112px"><div class="str"></div><svg class="bell" viewBox="0 0 26 34"><use href="#bellShape"/></svg></div>
+  </div>
+
+  <svg class="frame" viewBox="0 0 390 840" preserveAspectRatio="none" aria-hidden="true">
+    <path d="M12 48 L48 12 L342 12 L378 48 L378 828 L12 828 L12 48 Z" fill="none" stroke="#C09A38" stroke-width="1.8"/>
+    <path d="M19 52 L52 19 L338 19 L371 52 L371 821 L19 821 L19 52 Z" fill="none" stroke="#DCB65B" stroke-width="1" stroke-opacity=".85"/>
+  </svg>
+
+  <div class="content">
+
+    <svg class="ganesha" viewBox="0 0 120 100" fill="none"
+         role="img" aria-label="Ganesha, invoked for an auspicious beginning">
+      <g stroke="#B8912F" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
+        <circle cx="60" cy="9" r="2.6" fill="#B8912F" stroke="none"/>
+        <path d="M60 12v5"/>
+        <path d="M49 25 L53 15 L60 22 L67 15 L71 25"/>
+        <path d="M46 27 C46 21 52 18 60 18 C68 18 74 21 74 27"/>
+        <path d="M45 30 C45 44 51 54 60 54 C69 54 75 44 75 30"/>
+        <path d="M45 30 C31 25 21 33 23 44 C25 55 38 58 46 50"/>
+        <path d="M75 30 C89 25 99 33 97 44 C95 55 82 58 74 50"/>
+        <path d="M60 45 C61 58 57 69 48 73 C41 76 37 70 41 66"/>
+        <path d="M52 53 C50 59 51 64 55 66"/>
+        <path d="M68 53 C70 59 69 64 65 66"/>
+        <path d="M41 63 C45 78 52 85 60 85 C68 85 75 78 79 63"/>
+      </g>
+      <g stroke="#C9A54A" stroke-width="1.6" fill="none" stroke-linecap="round" stroke-opacity=".9">
+        <path d="M40 95 C48 89 54 97 60 91 C66 97 72 89 80 95"/>
+      </g>
+    </svg>
+
+    <p class="kicker">With immense joy,<br>I'm happy to share that</p>
+    <p class="script-line">I'm getting Married!</p>
+
+    <svg class="rings" viewBox="0 0 140 40" fill="none" aria-hidden="true">
+      <path d="M2 26 C16 26 22 17 30 17 C36 17 40 20 44 23" stroke="#C9A54A" stroke-width="1.4" stroke-linecap="round"/>
+      <path d="M138 26 C124 26 118 17 110 17 C104 17 100 20 96 23" stroke="#C9A54A" stroke-width="1.4" stroke-linecap="round"/>
+      <circle cx="62" cy="22" r="12" stroke="#B8912F" stroke-width="2.2"/>
+      <circle cx="79" cy="22" r="12" stroke="#D6AF4E" stroke-width="2.2"/>
+      <path d="M62 7 l2.2 4.2 4.4 -1.6" stroke="#B8912F" stroke-width="1.5" stroke-linecap="round"/>
+    </svg>
+
+    <p class="invite">
+      It gives me great pleasure to invite you and your family to be a part of this special
+      occasion as we begin a beautiful new chapter of our lives. Your presence and blessings
+      would make our celebration truly memorable.
+    </p>
+
+    <h1 class="names">
+      <span class="n">Midhun</span>
+      <span class="amp">&amp;</span>
+      <span class="n">Nandhini</span>
+    </h1>
+    <p class="names-te">మిధున్ కుమార్ &amp; నందిని &nbsp;·&nbsp; శుభ వివాహం</p>
+
+    <svg class="divider" viewBox="0 0 300 20" fill="none" aria-hidden="true">
+      <path d="M0 10 H118" stroke="#C9A54A" stroke-width="1"/>
+      <path d="M182 10 H300" stroke="#C9A54A" stroke-width="1"/>
+      <path d="M118 10 C124 4.5 130 4.5 134 8.5" stroke="#C9A54A" stroke-width="1.1" stroke-linecap="round"/>
+      <path d="M182 10 C176 4.5 170 4.5 166 8.5" stroke="#C9A54A" stroke-width="1.1" stroke-linecap="round"/>
+      <path d="M150 3.5 C154.6 3.5 157.5 7 157.5 10 C157.5 13.6 153 16.5 150 18.4 C147 16.5 142.5 13.6 142.5 10 C142.5 7 145.4 3.5 150 3.5 Z" fill="#B8912F"/>
+      <path d="M139 5.5 C141.8 5.5 143.6 8.2 143.6 10 C143.6 12.8 140.8 14.7 139 15.6 C137.2 14.7 134.4 12.8 134.4 10 C134.4 8.2 136.2 5.5 139 5.5 Z" fill="#C9A54A" fill-opacity=".55"/>
+      <path d="M161 5.5 C163.8 5.5 165.6 8.2 165.6 10 C165.6 12.8 162.8 14.7 161 15.6 C159.2 14.7 156.4 12.8 156.4 10 C156.4 8.2 158.2 5.5 161 5.5 Z" fill="#C9A54A" fill-opacity=".55"/>
+    </svg>
+
+    <div class="events">
+      <section class="event">
+        <svg class="medallion" viewBox="0 0 60 60" role="img" aria-label="Couple emblem">
+          <path d="M30 2 C38 2 44 8 44 16 C52 16 58 22 58 30 C58 38 52 44 44 44 C44 52 38 58 30 58 C22 58 16 52 16 44 C8 44 2 38 2 30 C2 22 8 16 16 16 C16 8 22 2 30 2 Z" fill="#7C1230"/>
+          <path d="M30 5 C37 5 42 10 42 17 C49 17 55 23 55 30 C55 37 49 42 42 42 C42 49 37 55 30 55 C23 55 18 49 18 42 C11 42 5 37 5 30 C5 23 11 17 18 17 C18 10 23 5 30 5 Z" fill="none" stroke="#E3C271" stroke-width="1"/>
+          <g stroke="#EBD79B" stroke-width="1.8" fill="none" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="23" cy="21" r="4.4"/>
+            <path d="M23 26 C17.5 27 15 32.5 15 42 h8"/>
+            <path d="M31 42 v-9"/>
+            <circle cx="38" cy="22" r="4.4"/>
+            <path d="M38 27 C43.5 28 46 33.5 46 43 h-14 v-9"/>
+            <path d="M27 34 h8"/>
+          </g>
+        </svg>
+        <h2>Reception</h2>
+        <p class="date">3<sup>rd</sup> September 2026<span class="day">Thursday</span></p>
+        <p class="time">12:30 PM onwards</p>
+        <p class="note">Afternoon · lunch &amp; blessings</p>
+      </section>
+
+      <div class="vdiv" aria-hidden="true">
+        <svg viewBox="0 0 12 160" preserveAspectRatio="none">
+          <path d="M6 4 V156" stroke="#C9A54A" stroke-width="1" stroke-opacity=".85"/>
+          <path d="M6 72 C8.4 74.4 8.4 79.6 6 82 C3.6 79.6 3.6 74.4 6 72 Z" fill="#B8912F"/>
+        </svg>
+      </div>
+
+      <section class="event">
+        <svg class="medallion" viewBox="0 0 60 60" role="img" aria-label="Kalash emblem">
+          <path d="M30 2 C38 2 44 8 44 16 C52 16 58 22 58 30 C58 38 52 44 44 44 C44 52 38 58 30 58 C22 58 16 52 16 44 C8 44 2 38 2 30 C2 22 8 16 16 16 C16 8 22 2 30 2 Z" fill="#7C1230"/>
+          <path d="M30 5 C37 5 42 10 42 17 C49 17 55 23 55 30 C55 37 49 42 42 42 C42 49 37 55 30 55 C23 55 18 49 18 42 C11 42 5 37 5 30 C5 23 11 17 18 17 C18 10 23 5 30 5 Z" fill="none" stroke="#E3C271" stroke-width="1"/>
+          <g stroke="#EBD79B" stroke-width="1.8" fill="none" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M20 32 C20 44 24 50 30 50 C36 50 40 44 40 32 Z"/>
+            <path d="M17.5 32 h25"/>
+            <path d="M23.5 28 h13"/>
+            <path d="M23.5 28 C23.5 30 22 31 20.5 32"/>
+            <path d="M36.5 28 C36.5 30 38 31 39.5 32"/>
+            <circle cx="30" cy="20" r="4.6"/>
+            <path d="M25.5 22 C18.5 20.5 15.5 16 16.5 11.5"/>
+            <path d="M34.5 22 C41.5 20.5 44.5 16 43.5 11.5"/>
+            <path d="M30 15.4 V12"/>
+          </g>
+        </svg>
+        <h2>Wedding Muhurtham</h2>
+        <p class="date">4<sup>th</sup> September 2026<span class="day">Friday</span></p>
+        <p class="time">2:52 AM</p>
+        <p class="note">Early hours of 4<sup>th</sup> September</p>
+      </section>
+    </div>
+
+    <div class="venue">
+      <p class="venue-label">
+        <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+          <path d="M12 22s7.5-7.2 7.5-12.4A7.5 7.5 0 0 0 4.5 9.6C4.5 14.8 12 22 12 22Z" stroke="#7C1230" stroke-width="1.9"/>
+          <circle cx="12" cy="9.6" r="2.8" fill="#C0355A"/>
+        </svg>
+        Venue
+      </p>
+      <p class="venue-name">V Conventions</p>
+      <p class="venue-alt">(Visyaraju Convention)</p>
+      <p class="venue-addr">Near Simhadwaram, NH-16, Srikakulam</p>
+    </div>
+
+    <div class="actions">
+      <a class="btn" href="https://maps.app.goo.gl/6fUNvfMqtJRgSFfm7?g_st=ic" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+          <path d="M12 22s7.5-7.2 7.5-12.4A7.5 7.5 0 0 0 4.5 9.6C4.5 14.8 12 22 12 22Z" stroke="currentColor" stroke-width="1.9"/>
+          <circle cx="12" cy="9.6" r="2.6" stroke="currentColor" stroke-width="1.7"/>
+        </svg>
+        Google Maps
+      </a>
+      <a class="btn btn-alt" href="https://calendar.google.com/calendar/event?action=TEMPLATE&amp;tmeid=M2d1a2tzcjM4dHBnMmFmbGVzdjIwa2t0aHQgZmFtaWx5MTMzOTY4NjQ1NTQyMTM0ODU2MDlAZw&amp;tmsrc=family13396864554213485609%40group.calendar.google.com" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+          <rect x="2.5" y="4.5" width="19" height="17" rx="2" stroke="currentColor" stroke-width="1.7"/>
+          <path d="M2.5 9.5h19M7.5 2.5v4M16.5 2.5v4M12 12.5v6M9 15.5h6" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/>
+        </svg>
+        Add to Calendar
+      </a>
+    </div>
+
+    <p class="closing">Looking forward to celebrating this special<br>moment with you and your family.</p>
+
+    <svg class="heart" viewBox="0 0 24 22" aria-hidden="true">
+      <path d="M12 20.5 C6 15.6 1.5 12.2 1.5 7.6 C1.5 4.2 4.2 1.5 7.4 1.5 C9.5 1.5 11.1 2.7 12 4.2 C12.9 2.7 14.5 1.5 16.6 1.5 C19.8 1.5 22.5 4.2 22.5 7.6 C22.5 12.2 18 15.6 12 20.5 Z" fill="#C0355A"/>
+    </svg>
+
+    <p class="warmly">Warmly,</p>
+    <p class="signer">Midhun Kumar Peddina</p>
+  </div>
+</main>
+
+<script>
+/* Scale the whole card so it always fits one screen — never scrolls. */
+(function(){
+  var card = document.getElementById('card');
+  var DESIGN_W = 390;
+
+  function fit(){
+    card.style.transform = 'none';
+    var h = card.offsetHeight;                    // natural height at design width
+    var vw = window.innerWidth;
+    var vh = window.visualViewport ? window.visualViewport.height : window.innerHeight;
+    var s = Math.min((vw - 12) / DESIGN_W, (vh - 12) / h);
+    s = Math.min(s, 1.35);                        // don't blow it up on huge screens
+    card.style.transform = 'scale(' + s + ')';
+    document.body.classList.add('fitted');
+  }
+
+  fit();
+  window.addEventListener('resize', fit);
+  window.addEventListener('orientationchange', function(){ setTimeout(fit, 250); });
+  if (document.fonts && document.fonts.ready) document.fonts.ready.then(fit);
+  window.addEventListener('load', fit);
+})();
+</script>
+</body>
+</html>
